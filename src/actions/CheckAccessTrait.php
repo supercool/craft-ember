@@ -32,13 +32,6 @@ trait CheckAccessTrait
      */
     public function checkAccess(...$params)
     {
-        if ($this->checkAccess) {
-            if (call_user_func_array($this->checkAccess, $params) === false) {
-                /** @noinspection PhpVoidFunctionResultUsedInspection */
-                return $this->handleForbiddenResponse();
-            };
-        }
-
         return true;
     }
 
